@@ -12,7 +12,6 @@ formEl.addEventListener('submit', onFormSubmit);
 function onFormInput(e) {
   formData[e.target.name] = e.target.value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-  console.log(formData);
 }
 
 function onFormSubmit(e) {
@@ -24,7 +23,7 @@ function onFormSubmit(e) {
   if (email.value === '' || message.value === '') {
     return window.alert('Please fill in all the fields!');
   }
-  console.log({ Email: email.value, Message: message.value });
+  console.log(formData);
   formEl.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
